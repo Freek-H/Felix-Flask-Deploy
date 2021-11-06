@@ -38,6 +38,7 @@ def insert_test(s):
         VALUES
             (?)
     """, s)
+    cur.commit()
     cur.execute(f'SELECT * FROM [dbo].[test] WHERE [Name] = ?', s)
     return f"{cur.fetchall()}"
 
